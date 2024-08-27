@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ceb762-e006-4661-af54-aeee6e5884d8" name="Changes" comment="PyTorch">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cıfar10.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdc_cnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rdc_cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/rdc_cnn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,7 @@
       <updated>1724742897271</updated>
       <workItem from="1724742899359" duration="4057000" />
       <workItem from="1724751062582" duration="1367000" />
-      <workItem from="1724752460538" duration="2669000" />
+      <workItem from="1724752460538" duration="6543000" />
     </task>
     <task id="LOCAL-00001" summary="PyTorch">
       <option name="closed" value="true" />
@@ -126,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724746406040</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PyTorch">
+      <option name="closed" value="true" />
+      <created>1724756316887</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724756316887</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
