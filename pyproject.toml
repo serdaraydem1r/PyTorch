@@ -16,6 +16,9 @@ seaborn = "^0.13.2"
 matplotlib = "^3.9.2"
 requests = "^2.32.3"
 scipy = "^1.14.1"
+sympy = "^1.13.2"
+display = "^1.0.0"
+ipython = "^8.27.0"
 
 [build-system]
 requires = ["poetry-core"]
