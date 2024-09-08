@@ -17,5 +17,5 @@ thewrongway = df*dg
 viasympy = sym.diff(fx*gx)
 print('The Functions:')
 display(fx)
-display(gxaaaaaaa)
+display(gx)
 print(' ')
