@@ -3,8 +3,9 @@ import torch
 import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
+from mpmath import sigmoid
 
-from ANN.ann_regression import optimizer, predictions
+from ANN.ann_regression import optimizer, predictions, lossfun, losses
 
 #%%
 # create data
@@ -62,6 +63,48 @@ def trainModel(ANNmodel):
         loss.backward()
         optimizer.step()
 
-        predictions = ANNmodel(data)
+        predictions = sigmoid(ANNmodel(data))
         totalacc = 100*torch.mean(((predictions>0)==labels).float())
         return losses, totalacc, predictions
+
+#%%
+ANNclassify,lossfun,optimizer = createANNmodel(.01)
+
+losses,predictions,totalacc = trainModel(ANNclassify)
+
+print(f"Final Accuracy: {totalacc}")
+
+plt.figure(figsize = (5,5))
+plt.plot(losses.detach(),'o',markerfacecolor='blue',linewidth = .1)
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.show()
+
+#%%
+learningrates = np.linspace(.001,.1,40)
+# initialize results output
+accByLR = []
+allLosses = np.zeros((len(learningrates),numepochs))
+
+# loop through learnin rates
+for i, lr in enumerate(learningrates):
+    ANNclassify,lossfun,optimizer = createANNmodel(lr)
+    losses,predictions,totalacc = trainModel(ANNclassify)
+    accByLR.append(totalacc)
+    allLosses[i,:] = losses.detach()
+#%%
+fig,ax = plt.subplots(1,2,figsize = (12,4))
+
+ax[0].plot(learningrates,accByLR,'s-')
+ax[0].set_xlabel('Learning Rate')
+ax[0].set_ylabel('Accuracy')
+ax[0].set_title('Accuracy vs Learning Rate')
+
+ax[1].plot(allLosses.T)
+ax[1].set_xlabel('Epoch Number')
+ax[1].set_ylabel('Loss')
+ax[1].set_title('Loss by learning rate')
+plt.show()
+
+#%%
+sum(torch.tensor(accByLR)>70)/len(accByLR)
